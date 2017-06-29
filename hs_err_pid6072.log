@@ -1,0 +1,570 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00000000573a31ef, pid=6072, tid=4400
+#
+# JRE version: Java(TM) SE Runtime Environment (7.0_80-b15) (build 1.7.0_80-b15)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (24.80-b11 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# V  [jvm.dll+0xa31ef]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000100bf000):  JavaThread "http-nio-8001-exec-7" daemon [_thread_in_vm, id=4400, stack(0x0000000013200000,0x0000000013300000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000000000ea
+
+Registers:
+RAX=0x00000000103fb678, RBX=0x00000000103fb678, RCX=0x00000000000000c6, RDX=0x00000000103fb658
+RSP=0x00000000132f5c50, RBP=0x00000000100bf000, RSI=0x0000000000000011, RDI=0x0000000000000000
+R8 =0x00000000103fb650, R9 =0x00000000000000c6, R10=0x000000000000000c, R11=0x00000000132f5d38
+R12=0x0000000000000001, R13=0x00000000132f5e70, R14=0x000000000d23cc80, R15=0x000000000d32d710
+RIP=0x00000000573a31ef, EFLAGS=0x0000000000010202
+
+Top of Stack: (sp=0x00000000132f5c50)
+0x00000000132f5c50:   00000000100bf000 00000000574eda9f
+0x00000000132f5c60:   0000000000000006 00000000574edd5b
+0x00000000132f5c70:   00000000132f5de0 000000005739a385
+0x00000000132f5c80:   0000eeac1c057582 00000000574ed53b
+0x00000000132f5c90:   000000000e58c070 00000000103fb650
+0x00000000132f5ca0:   000000000d32d710 000000000d23cc80
+0x00000000132f5cb0:   00000000103fb640 00000000103fb630
+0x00000000132f5cc0:   000000000000004c 00000000100bf000
+0x00000000132f5cd0:   00000000132f5e70 00000000573a3d4a
+0x00000000132f5ce0:   00000000100bf000 00000000103fb658
+0x00000000132f5cf0:   00000000103fb640 00000000c156b2f0
+0x00000000132f5d00:   00000000103fb650 00000000573d7901
+0x00000000132f5d10:   00000000100bf000 000000000000004c
+0x00000000132f5d20:   00000000103fb658 0000000000000000
+0x00000000132f5d30:   00000000103fb648 00000000573a4e73
+0x00000000132f5d40:   00000000103fb650 00000000103fb628 
+
+Instructions: (pc=0x00000000573a31ef)
+0x00000000573a31cf:   a1 00 00 4c 89 66 08 4c 89 6e 10 4c 89 76 18 e9
+0x00000000573a31df:   ea 00 00 00 45 84 e4 0f 84 c0 00 00 00 48 8b 0b
+0x00000000573a31ef:   8b 41 24 c1 e8 0a a8 01 0f 84 af 00 00 00 48 8b
+0x00000000573a31ff:   b5 18 01 00 00 48 8b 41 10 0f b7 50 3a 48 8b 48 
+
+
+Register to memory mapping:
+
+RAX=0x00000000103fb678 is an unknown value
+RBX=0x00000000103fb678 is an unknown value
+RCX=0x00000000000000c6 is an unknown value
+RDX=0x00000000103fb658 is an unknown value
+RSP=0x00000000132f5c50 is pointing into the stack for thread: 0x00000000100bf000
+RBP=0x00000000100bf000 is a thread
+RSI=0x0000000000000011 is an unknown value
+RDI=0x0000000000000000 is an unknown value
+R8 =0x00000000103fb650 is an unknown value
+R9 =0x00000000000000c6 is an unknown value
+R10=0x000000000000000c is an unknown value
+R11=0x00000000132f5d38 is pointing into the stack for thread: 0x00000000100bf000
+R12=0x0000000000000001 is an unknown value
+R13=0x00000000132f5e70 is pointing into the stack for thread: 0x00000000100bf000
+R14=0x000000000d23cc80 is an unknown value
+R15=0x000000000d32d710 is an unknown value
+
+
+Stack: [0x0000000013200000,0x0000000013300000],  sp=0x00000000132f5c50,  free space=983k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0xa31ef]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  grails.plugin.springsecurity.SpringSecurityService.getProperty(Ljava/lang/String;)Ljava/lang/Object;+1
+j  mes_web.UserLG$$EQNgG3Ap.attach(Lmes_web/UserLG;)Ljava/lang/Object;+27
+j  mes_web.UserLG$$DQNgG3Ap.attach(Lmes_web/UserLG;)Ljava/lang/Object;+1
+j  mes_web.UserLG.attach()Ljava/lang/Object;+38
+v  ~StubRoutines::call_stub
+J 2261  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (0 bytes) @ 0x0000000002b3621f [0x0000000002b361a0+0x7f]
+J 2260 C1 sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (91 bytes) @ 0x0000000002b36874 [0x0000000002b365c0+0x2b4]
+J 758 C1 sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (10 bytes) @ 0x00000000025dfe44 [0x00000000025dfe00+0x44]
+J 757 C1 java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (63 bytes) @ 0x00000000025e0264 [0x00000000025e0160+0x104]
+J 1944 C1 org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (2214 bytes) @ 0x0000000002a5f85c [0x0000000002a5e340+0x151c]
+j  org.grails.spring.beans.factory.OptimizedAutowireCapableBeanFactory.autowireBeanInAutowireByName(Ljava/lang/Object;Ljava/util/Map;)V+121
+j  org.grails.spring.beans.factory.OptimizedAutowireCapableBeanFactory.populateBeanInAutowireByName(Ljava/lang/Object;)V+9
+j  org.grails.spring.beans.factory.OptimizedAutowireCapableBeanFactory.autowireBeanProperties(Ljava/lang/Object;IZ)V+41
+j  org.grails.plugins.web.controllers.api.ControllersDomainBindingApi.autowire(Ljava/lang/Object;)V+54
+j  org.grails.plugins.web.controllers.api.ControllersDomainBindingApi.initialize(Ljava/lang/Object;)V+1
+j  mes_web.UserLG.<init>()V+324
+j  mes_web.UserLG_$$_jvst87b_d.<init>()V+8
+v  ~StubRoutines::call_stub
+J 1822  sun.reflect.NativeConstructorAccessorImpl.newInstance0(Ljava/lang/reflect/Constructor;[Ljava/lang/Object;)Ljava/lang/Object; (0 bytes) @ 0x0000000002a2dd46 [0x0000000002a2dce0+0x66]
+J 1821 C1 sun.reflect.NativeConstructorAccessorImpl.newInstance([Ljava/lang/Object;)Ljava/lang/Object; (76 bytes) @ 0x0000000002a2e384 [0x0000000002a2e100+0x284]
+J 1479 C1 sun.reflect.DelegatingConstructorAccessorImpl.newInstance([Ljava/lang/Object;)Ljava/lang/Object; (9 bytes) @ 0x000000000298bc04 [0x000000000298bbc0+0x44]
+J 1476 C1 java.lang.reflect.Constructor.newInstance([Ljava/lang/Object;)Ljava/lang/Object; (85 bytes) @ 0x000000000298b01c [0x000000000298af00+0x11c]
+J 1951 C1 org.springsource.loaded.ri.ReflectiveInterceptor.jlrConstructorNewInstance(Ljava/lang/reflect/Constructor;[Ljava/lang/Object;)Ljava/lang/Object; (177 bytes) @ 0x0000000002a6f0cc [0x0000000002a6e860+0x86c]
+J 6279 C1 org.springsource.loaded.ri.ReflectiveInterceptor.jlClassNewInstance(Ljava/lang/Class;)Ljava/lang/Object; (37 bytes) @ 0x00000000032f8674 [0x00000000032f8540+0x134]
+j  org.grails.orm.hibernate.proxy.GroovyAwareJavassistLazyInitializer.createProxyInstance(Ljava/lang/Class;Lorg/grails/orm/hibernate/proxy/GroovyAwareJavassistLazyInitializer;)Lorg/hibernate/proxy/HibernateProxy;+1
+j  org.grails.orm.hibernate.proxy.GroovyAwareJavassistLazyInitializer.getProxy(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;Lorg/hibernate/type/CompositeType;Ljava/io/Serializable;Lorg/hibernate/engine/spi/SessionImplementor;)Lorg/hibernate/proxy/HibernateProxy;+29
+j  org.grails.orm.hibernate.proxy.GroovyAwareJavassistProxyFactory.getProxy(Ljava/io/Serializable;Lorg/hibernate/engine/spi/SessionImplementor;)Lorg/hibernate/proxy/HibernateProxy;+30
+j  org.grails.orm.hibernate.persister.entity.GroovyAwareSingleTableEntityPersister.createProxy(Ljava/io/Serializable;Lorg/hibernate/engine/spi/SessionImplementor;)Ljava/lang/Object;+13
+j  org.hibernate.event.internal.DefaultLoadEventListener.createProxyIfNecessary(Lorg/hibernate/event/spi/LoadEvent;Lorg/hibernate/persister/entity/EntityPersister;Lorg/hibernate/engine/spi/EntityKey;Lorg/hibernate/event/spi/LoadEventListener$LoadType;Lorg/hibernate/engine/spi/PersistenceContext;)Ljava/lang/Object;+93
+j  org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(Lorg/hibernate/event/spi/LoadEvent;Lorg/hibernate/persister/entity/EntityPersister;Lorg/hibernate/engine/spi/EntityKey;Lorg/hibernate/event/spi/LoadEventListener$LoadType;)Ljava/lang/Object;+114
+j  org.hibernate.event.internal.DefaultLoadEventListener.onLoad(Lorg/hibernate/event/spi/LoadEvent;Lorg/hibernate/event/spi/LoadEventListener$LoadType;)V+366
+j  org.hibernate.internal.SessionImpl.fireLoad(Lorg/hibernate/event/spi/LoadEvent;Lorg/hibernate/event/spi/LoadEventListener$LoadType;)V+45
+j  org.hibernate.internal.SessionImpl.internalLoad(Ljava/lang/String;Ljava/io/Serializable;ZZ)Ljava/lang/Object;+44
+j  org.hibernate.type.EntityType.resolveIdentifier(Ljava/io/Serializable;Lorg/hibernate/engine/spi/SessionImplementor;)Ljava/lang/Object;+57
+j  org.hibernate.type.EntityType.resolve(Ljava/lang/Object;Lorg/hibernate/engine/spi/SessionImplementor;Ljava/lang/Object;)Ljava/lang/Object;+36
+j  org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(Ljava/lang/Object;Lorg/hibernate/engine/spi/EntityEntry;ZLorg/hibernate/engine/spi/SessionImplementor;Lorg/hibernate/event/spi/PreLoadEvent;)V+120
+j  org.hibernate.engine.internal.TwoPhaseLoad.initializeEntity(Ljava/lang/Object;ZLorg/hibernate/engine/spi/SessionImplementor;Lorg/hibernate/event/spi/PreLoadEvent;)V+39
+j  org.hibernate.loader.Loader.initializeEntitiesAndCollections(Ljava/util/List;Ljava/lang/Object;Lorg/hibernate/engine/spi/SessionImplementor;ZLjava/util/List;)V+147
+j  org.hibernate.loader.Loader.processResultSet(Ljava/sql/ResultSet;Lorg/hibernate/engine/spi/QueryParameters;Lorg/hibernate/engine/spi/SessionImplementor;ZLorg/hibernate/transform/ResultTransformer;ILjava/util/List;)Ljava/util/List;+236
+j  org.hibernate.loader.Loader.doQuery(Lorg/hibernate/engine/spi/SessionImplementor;Lorg/hibernate/engine/spi/QueryParameters;ZLorg/hibernate/transform/ResultTransformer;)Ljava/util/List;+76
+j  org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Lorg/hibernate/engine/spi/SessionImplementor;Lorg/hibernate/engine/spi/QueryParameters;ZLorg/hibernate/transform/ResultTransformer;)Ljava/util/List;+62
+j  org.hibernate.loader.Loader.doList(Lorg/hibernate/engine/spi/SessionImplementor;Lorg/hibernate/engine/spi/QueryParameters;Lorg/hibernate/transform/ResultTransformer;)Ljava/util/List;+34
+j  org.hibernate.loader.Loader.doList(Lorg/hibernate/engine/spi/SessionImplementor;Lorg/hibernate/engine/spi/QueryParameters;)Ljava/util/List;+4
+j  org.hibernate.loader.Loader.listIgnoreQueryCache(Lorg/hibernate/engine/spi/SessionImplementor;Lorg/hibernate/engine/spi/QueryParameters;)Ljava/util/List;+4
+j  org.hibernate.loader.Loader.list(Lorg/hibernate/engine/spi/SessionImplementor;Lorg/hibernate/engine/spi/QueryParameters;Ljava/util/Set;[Lorg/hibernate/type/Type;)Ljava/util/List;+47
+j  org.hibernate.loader.criteria.CriteriaLoader.list(Lorg/hibernate/engine/spi/SessionImplementor;)Ljava/util/List;+17
+j  org.hibernate.internal.SessionImpl.list(Lorg/hibernate/Criteria;)Ljava/util/List;+182
+j  org.hibernate.internal.CriteriaImpl.list()Ljava/util/List;+9
+j  grails.orm.PagedResultList.<init>(Lorg/grails/orm/hibernate/GrailsHibernateTemplate;Lorg/hibernate/Criteria;)V+7
+j  org.grails.orm.hibernate.HibernateGormStaticApi$_list_closure1.doCall(Lorg/hibernate/Session;)Ljava/lang/Object;+234
+v  ~StubRoutines::call_stub
+J 2261  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (0 bytes) @ 0x0000000002b3621f [0x0000000002b361a0+0x7f]
+J 2260 C1 sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (91 bytes) @ 0x0000000002b36874 [0x0000000002b365c0+0x2b4]
+J 758 C1 sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (10 bytes) @ 0x00000000025dfe44 [0x00000000025dfe00+0x44]
+J 757 C1 java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (63 bytes) @ 0x00000000025e0264 [0x00000000025e0160+0x104]
+J 1944 C1 org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (2214 bytes) @ 0x0000000002a5f9ac [0x0000000002a5e340+0x166c]
+J 4049 C1 org.codehaus.groovy.reflection.CachedMethod.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (70 bytes) @ 0x0000000002e19e74 [0x0000000002e19e40+0x34]
+J 2431 C1 groovy.lang.MetaMethod.doMethodInvoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (22 bytes) @ 0x0000000002ba1754 [0x0000000002ba16e0+0x74]
+J 4046 C1 org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object; (892 bytes) @ 0x0000000002ed78fc [0x0000000002ed6700+0x11fc]
+J 1936 C1 groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object; (14 bytes) @ 0x0000000002a5a9e4 [0x0000000002a5a980+0x64]
+J 4094 C1 groovy.lang.Closure.call([Ljava/lang/Object;)Ljava/lang/Object; (30 bytes) @ 0x0000000002b52d3c [0x0000000002b52cc0+0x7c]
+j  org.codehaus.groovy.runtime.ConvertedClosure.invokeCustom(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;+31
+j  org.codehaus.groovy.runtime.ConversionHandler.invoke(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;+130
+j  com.sun.proxy.$Proxy98.doInHibernate(Lorg/hibernate/Session;)Ljava/lang/Object;+37
+j  org.grails.orm.hibernate.GrailsHibernateTemplate.doExecute(Lorg/grails/orm/hibernate/GrailsHibernateTemplate$HibernateCallback;Z)Ljava/lang/Object;+85
+j  org.grails.orm.hibernate.GrailsHibernateTemplate.execute(Lorg/grails/orm/hibernate/GrailsHibernateTemplate$HibernateCallback;)Ljava/lang/Object;+3
+j  org.grails.orm.hibernate.GrailsHibernateTemplate.execute(Lgroovy/lang/Closure;)Ljava/lang/Object;+12
+j  org.grails.orm.hibernate.HibernateGormStaticApi.list(Ljava/util/Map;)Ljava/util/List;+24
+j  org.grails.datastore.gorm.GormEntity$Trait$Helper.list(Ljava/lang/Class;Ljava/util/Map;)Ljava/util/List;+19
+j  org.grails.datastore.gorm.GormEntity$Trait$Helper$list$3.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+21
+J 3775 C1 org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (7 bytes) @ 0x0000000002e5a1ec [0x0000000002e5a180+0x6c]
+J 4418 C1 org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; (42 bytes) @ 0x0000000002fa736c [0x0000000002fa71a0+0x1cc]
+j  mes_web.Material$$EQNgG2au.list(Ljava/util/Map;)Ljava/util/List;+14
+j  mes_web.Material$$DQNgG2au.list(Lmes_web/Material;Ljava/util/Map;)Ljava/util/List;+1
+j  mes_web.Material.list(Ljava/util/Map;)Ljava/util/List;+23
+j  mes_web.Material$list$0.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+58
+J 3657 C1 org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(Lorg/codehaus/groovy/runtime/callsite/CallSite;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (14 bytes) @ 0x0000000002e167cc [0x0000000002e16780+0x4c]
+j  mes_web.Material$list$0.call(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+66
+j  grails.rest.RestfulController.listAllResources(Ljava/util/Map;)Ljava/util/List;+14
+j  mes_web.MaterialController.listAllResources(Ljava/util/Map;)Ljava/util/List;+30
+v  ~StubRoutines::call_stub
+J 2261  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (0 bytes) @ 0x0000000002b3621f [0x0000000002b361a0+0x7f]
+J 2260 C1 sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (91 bytes) @ 0x0000000002b36874 [0x0000000002b365c0+0x2b4]
+J 758 C1 sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (10 bytes) @ 0x00000000025dfe44 [0x00000000025dfe00+0x44]
+J 757 C1 java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (63 bytes) @ 0x00000000025e0264 [0x00000000025e0160+0x104]
+J 1944 C1 org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (2214 bytes) @ 0x0000000002a5f9ac [0x0000000002a5e340+0x166c]
+J 8679 C1 org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (37 bytes) @ 0x0000000003814d74 [0x0000000003814d40+0x34]
+J 8684 C1 org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object; (29 bytes) @ 0x0000000003816c04 [0x0000000003816b40+0xc4]
+J 8684 C1 org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(Lgroovy/lang/GroovyObject;[Ljava/lang/Object;)Ljava/lang/Object; (29 bytes) @ 0x0000000003816c5c [0x0000000003816b40+0x11c]
+J 4460 C1 org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(Lgroovy/lang/GroovyObject;Ljava/lang/Object;)Ljava/lang/Object; (37 bytes) @ 0x0000000002fc30c4 [0x0000000002fc2f60+0x164]
+j  grails.rest.RestfulController.index(Ljava/lang/Integer;)Ljava/lang/Object;+439
+j  mes_web.MaterialController.index(Ljava/lang/Integer;)Ljava/lang/Object;+30
+j  grails.rest.RestfulController.$tt__index(Lorg/springframework/transaction/TransactionStatus;)Ljava/lang/Object;+476
+j  mes_web.MaterialController.$tt__index(Lorg/springframework/transaction/TransactionStatus;)Ljava/lang/Object;+30
+j  grails.rest.RestfulController$_index_closure9.doCall(Lorg/springframework/transaction/TransactionStatus;)Ljava/lang/Object;+17
+v  ~StubRoutines::call_stub
+J 2261  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (0 bytes) @ 0x0000000002b3621f [0x0000000002b361a0+0x7f]
+J 2260 C1 sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (91 bytes) @ 0x0000000002b36874 [0x0000000002b365c0+0x2b4]
+J 758 C1 sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (10 bytes) @ 0x00000000025dfe44 [0x00000000025dfe00+0x44]
+J 757 C1 java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (63 bytes) @ 0x00000000025e0264 [0x00000000025e0160+0x104]
+J 1944 C1 org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (2214 bytes) @ 0x0000000002a5f9ac [0x0000000002a5e340+0x166c]
+J 4049 C1 org.codehaus.groovy.reflection.CachedMethod.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (70 bytes) @ 0x0000000002e19e74 [0x0000000002e19e40+0x34]
+J 2431 C1 groovy.lang.MetaMethod.doMethodInvoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (22 bytes) @ 0x0000000002ba1754 [0x0000000002ba16e0+0x74]
+J 4046 C1 org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;ZZ)Ljava/lang/Object; (892 bytes) @ 0x0000000002ed78fc [0x0000000002ed6700+0x11fc]
+J 1936 C1 groovy.lang.MetaClassImpl.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object; (14 bytes) @ 0x0000000002a5a9e4 [0x0000000002a5a980+0x64]
+J 4094 C1 groovy.lang.Closure.call([Ljava/lang/Object;)Ljava/lang/Object; (30 bytes) @ 0x0000000002b52d3c [0x0000000002b52cc0+0x7c]
+J 4476 C1 groovy.lang.Closure.call(Ljava/lang/Object;)Ljava/lang/Object; (13 bytes) @ 0x0000000002fc9de4 [0x0000000002fc9cc0+0x124]
+j  grails.transaction.GrailsTransactionTemplate$2.doInTransaction(Lorg/springframework/transaction/TransactionStatus;)Ljava/lang/Object;+11
+j  org.springframework.transaction.support.TransactionTemplate.execute(Lorg/springframework/transaction/support/TransactionCallback;)Ljava/lang/Object;+38
+j  grails.transaction.GrailsTransactionTemplate.execute(Lgroovy/lang/Closure;)Ljava/lang/Object;+23
+j  grails.rest.RestfulController.index()Ljava/lang/Object;+98
+j  mes_web.MaterialController.index()Ljava/lang/Object;+28
+v  ~StubRoutines::call_stub
+J 2261  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (0 bytes) @ 0x0000000002b3621f [0x0000000002b361a0+0x7f]
+J 2260 C1 sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (91 bytes) @ 0x0000000002b36874 [0x0000000002b365c0+0x2b4]
+J 758 C1 sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (10 bytes) @ 0x00000000025dfe44 [0x00000000025dfe00+0x44]
+J 757 C1 java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (63 bytes) @ 0x00000000025e0264 [0x00000000025e0160+0x104]
+J 1944 C1 org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (2214 bytes) @ 0x0000000002a5f9ac [0x0000000002a5e340+0x166c]
+j  org.grails.core.DefaultGrailsControllerClass$ReflectionInvoker.invoke(Ljava/lang/Object;)Ljava/lang/Object;+9
+j  org.grails.core.DefaultGrailsControllerClass.invoke(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;+57
+j  org.grails.web.mapping.mvc.UrlMappingsInfoHandlerAdapter.handle(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljava/lang/Object;)Lorg/springframework/web/servlet/ModelAndView;+405
+j  org.springframework.web.servlet.DispatcherServlet.doDispatch(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+322
+j  org.springframework.web.servlet.DispatcherServlet.doService(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+308
+j  org.springframework.web.servlet.FrameworkServlet.processRequest(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+71
+j  org.springframework.web.servlet.FrameworkServlet.doGet(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+3
+j  javax.servlet.http.HttpServlet.service(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+35
+j  org.springframework.web.servlet.FrameworkServlet.service(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+27
+j  javax.servlet.http.HttpServlet.service(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+31
+J 9268 C1 org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V (574 bytes) @ 0x00000000039119d4 [0x0000000003911700+0x2d4]
+J 9352 C1 org.apache.catalina.core.ApplicationFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V (105 bytes) @ 0x000000000392f9d4 [0x000000000392f9a0+0x34]
+j  org.apache.tomcat.websocket.server.WsFilter.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V+21
+J 9268 C1 org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V (574 bytes) @ 0x0000000003911a6c [0x0000000003911700+0x36c]
+J 9352 C1 org.apache.catalina.core.ApplicationFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V (105 bytes) @ 0x000000000392f9d4 [0x000000000392f9a0+0x34]
+j  org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration$ApplicationContextHeaderFilter.doFilterInternal(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljavax/servlet/FilterChain;)V+20
+J 9181 C1 org.springframework.web.filter.OncePerRequestFilter.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V (139 bytes) @ 0x00000000038ec1b4 [0x00000000038ebf40+0x274]
+J 9268 C1 org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V (574 bytes) @ 0x0000000003911a6c [0x0000000003911700+0x36c]
+J 9352 C1 org.apache.catalina.core.ApplicationFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V (105 bytes) @ 0x000000000392f9d4 [0x000000000392f9a0+0x34]
+J 10383 C1 org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljavax/servlet/FilterChain;)V (133 bytes) @ 0x0000000003b54ecc [0x0000000003b54e20+0xac]
+J 9181 C1 org.springframework.web.filter.OncePerRequestFilter.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V (139 bytes) @ 0x00000000038ec1b4 [0x00000000038ebf40+0x274]
+J 9268 C1 org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V (574 bytes) @ 0x0000000003911a6c [0x0000000003911700+0x36c]
+J 9352 C1 org.apache.catalina.core.ApplicationFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V (105 bytes) @ 0x000000000392f9d4 [0x000000000392f9a0+0x34]
+j  org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+68
+j  org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(Lorg/springframework/security/web/FilterInvocation;)V+87
+j  org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V+15
+j  org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+192
+j  org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V+17
+j  org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+192
+j  grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V+18
+j  org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+192
+j  org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V+332
+j  org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+192
+j  org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V+19
+j  org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+192
+j  org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V+28
+j  org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+192
+j  grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V+95
+j  org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+192
+j  org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V+165
+j  org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+192
+j  grails.plugin.springsecurity.web.SecurityRequestHolderFilter.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V+38
+j  org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+192
+j  org.springframework.security.web.FilterChainProxy.doFilterInternal(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V+142
+J 10107 C1 org.springframework.security.web.FilterChainProxy.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V (86 bytes) @ 0x0000000003ac8cec [0x0000000003ac8c00+0xec]
+J 9268 C1 org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V (574 bytes) @ 0x0000000003911a6c [0x0000000003911700+0x36c]
+J 9352 C1 org.apache.catalina.core.ApplicationFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V (105 bytes) @ 0x000000000392f9d4 [0x000000000392f9a0+0x34]
+J 10106 C1 org.grails.web.servlet.mvc.GrailsWebRequestFilter.doFilterInternal(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljavax/servlet/FilterChain;)V (295 bytes) @ 0x0000000003ac9f3c [0x0000000003ac99e0+0x55c]
+J 9181 C1 org.springframework.web.filter.OncePerRequestFilter.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V (139 bytes) @ 0x00000000038ec1b4 [0x00000000038ebf40+0x274]
+J 9268 C1 org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V (574 bytes) @ 0x0000000003911a6c [0x0000000003911700+0x36c]
+J 9352 C1 org.apache.catalina.core.ApplicationFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V (105 bytes) @ 0x000000000392f9d4 [0x000000000392f9a0+0x34]
+j  org.grails.web.filters.HiddenHttpMethodFilter.doFilterInternal(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljavax/servlet/FilterChain;)V+50
+J 9181 C1 org.springframework.web.filter.OncePerRequestFilter.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V (139 bytes) @ 0x00000000038ec1b4 [0x00000000038ebf40+0x274]
+J 9268 C1 org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V (574 bytes) @ 0x0000000003911a6c [0x0000000003911700+0x36c]
+J 9352 C1 org.apache.catalina.core.ApplicationFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V (105 bytes) @ 0x000000000392f9d4 [0x000000000392f9a0+0x34]
+j  org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljavax/servlet/FilterChain;)V+53
+J 9181 C1 org.springframework.web.filter.OncePerRequestFilter.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V (139 bytes) @ 0x00000000038ec1b4 [0x00000000038ebf40+0x274]
+J 9268 C1 org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V (574 bytes) @ 0x0000000003911a6c [0x0000000003911700+0x36c]
+J 9352 C1 org.apache.catalina.core.ApplicationFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V (105 bytes) @ 0x000000000392f9d4 [0x000000000392f9a0+0x34]
+j  org.springframework.boot.actuate.autoconfigure.MetricsFilter.doFilterInternal(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljavax/servlet/FilterChain;)V+31
+J 9181 C1 org.springframework.web.filter.OncePerRequestFilter.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V (139 bytes) @ 0x00000000038ec1b4 [0x00000000038ebf40+0x274]
+J 9268 C1 org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V (574 bytes) @ 0x0000000003911a6c [0x0000000003911700+0x36c]
+J 9352 C1 org.apache.catalina.core.ApplicationFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V (105 bytes) @ 0x000000000392f9d4 [0x000000000392f9a0+0x34]
+j  org.apache.catalina.core.StandardWrapperValve.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+762
+j  org.apache.catalina.core.StandardContextValve.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+166
+J 10095 C1 org.apache.catalina.authenticator.AuthenticatorBase.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V (920 bytes) @ 0x0000000003ac098c [0x0000000003abf500+0x148c]
+j  org.apache.catalina.core.StandardHostValve.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+135
+J 10091 C1 org.apache.catalina.valves.ErrorReportValve.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V (119 bytes) @ 0x0000000003abc98c [0x0000000003abc920+0x6c]
+j  org.apache.catalina.core.StandardEngineValve.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+71
+J 10108 C1 org.apache.catalina.connector.CoyoteAdapter.service(Lorg/apache/coyote/Request;Lorg/apache/coyote/Response;)V (726 bytes) @ 0x0000000003ad3904 [0x0000000003ad3220+0x6e4]
+j  org.apache.coyote.http11.AbstractHttp11Processor.process(Lorg/apache/tomcat/util/net/SocketWrapper;)Lorg/apache/tomcat/util/net/AbstractEndpoint$Handler$SocketState;+632
+j  org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(Lorg/apache/tomcat/util/net/SocketWrapper;Lorg/apache/tomcat/util/net/SocketStatus;)Lorg/apache/tomcat/util/net/AbstractEndpoint$Handler$SocketState;+339
+j  org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun()V+166
+J 10042 C1 org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run()V (79 bytes) @ 0x0000000003a9a6b4 [0x0000000003a9a560+0x154]
+j  java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V+95
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+5
+j  org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run()V+4
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000012476000 JavaThread "http-nio-8001-exec-10" daemon [_thread_blocked, id=4600, stack(0x0000000010cd0000,0x0000000010dd0000)]
+  0x0000000012475800 JavaThread "http-nio-8001-exec-9" daemon [_thread_blocked, id=3308, stack(0x0000000013620000,0x0000000013720000)]
+  0x00000000100c0000 JavaThread "http-nio-8001-exec-8" daemon [_thread_blocked, id=6108, stack(0x0000000013440000,0x0000000013540000)]
+=>0x00000000100bf000 JavaThread "http-nio-8001-exec-7" daemon [_thread_in_vm, id=4400, stack(0x0000000013200000,0x0000000013300000)]
+  0x00000000100be800 JavaThread "http-nio-8001-exec-6" daemon [_thread_blocked, id=3628, stack(0x0000000011dc0000,0x0000000011ec0000)]
+  0x00000000100bd000 JavaThread "http-nio-8001-exec-5" daemon [_thread_blocked, id=4916, stack(0x0000000013050000,0x0000000013150000)]
+  0x00000000100bd800 JavaThread "http-nio-8001-exec-4" daemon [_thread_blocked, id=4436, stack(0x0000000010860000,0x0000000010960000)]
+  0x00000000100bc000 JavaThread "http-nio-8001-exec-3" daemon [_thread_blocked, id=5760, stack(0x0000000011f50000,0x0000000012050000)]
+  0x00000000100bb800 JavaThread "http-nio-8001-exec-2" daemon [_thread_blocked, id=3616, stack(0x0000000011cc0000,0x0000000011dc0000)]
+  0x00000000100ba800 JavaThread "threadPoolExecutor-4" daemon [_thread_blocked, id=3932, stack(0x0000000011bb0000,0x0000000011cb0000)]
+  0x00000000100ba000 JavaThread "http-nio-8001-exec-1" daemon [_thread_blocked, id=5204, stack(0x0000000010980000,0x0000000010a80000)]
+  0x00000000100b9000 JavaThread "DestroyJavaVM" [_thread_blocked, id=3068, stack(0x0000000002200000,0x0000000002300000)]
+  0x00000000100b8800 JavaThread "Thread-9" daemon [_thread_blocked, id=6004, stack(0x0000000011a90000,0x0000000011b90000)]
+  0x00000000100b7800 JavaThread "Thread-11" [_thread_blocked, id=5980, stack(0x0000000011870000,0x0000000011970000)]
+  0x00000000100b7000 JavaThread "Thread-10" daemon [_thread_in_native, id=4388, stack(0x00000000115b0000,0x00000000116b0000)]
+  0x00000000100b6000 JavaThread "threadPoolExecutor-3" daemon [_thread_blocked, id=5592, stack(0x00000000116b0000,0x00000000117b0000)]
+  0x00000000100b5800 JavaThread "threadPoolExecutor-2" daemon [_thread_blocked, id=5444, stack(0x00000000112f0000,0x00000000113f0000)]
+  0x00000000100b4800 JavaThread "http-nio-8001-Acceptor-0" daemon [_thread_in_native, id=4304, stack(0x0000000011460000,0x0000000011560000)]
+  0x00000000100b4000 JavaThread "http-nio-8001-ClientPoller-1" daemon [_thread_blocked, id=6100, stack(0x0000000011070000,0x0000000011170000)]
+  0x00000000100b3000 JavaThread "http-nio-8001-ClientPoller-0" daemon [_thread_blocked, id=2196, stack(0x00000000111e0000,0x00000000112e0000)]
+  0x00000000100b2800 JavaThread "NioBlockingSelector.BlockPoller-1" daemon [_thread_blocked, id=4000, stack(0x0000000010f70000,0x0000000011070000)]
+  0x00000000100b1000 JavaThread "threadPoolExecutor-1" daemon [_thread_blocked, id=1944, stack(0x0000000010dd0000,0x0000000010ed0000)]
+  0x000000001005b000 JavaThread "container-0" [_thread_blocked, id=5824, stack(0x0000000010750000,0x0000000010850000)]
+  0x000000001005a800 JavaThread "ContainerBackgroundProcessor[StandardEngine[Tomcat].StandardHost[localhost].StandardContext[]]" daemon [_thread_blocked, id=1768, stack(0x0000000010bd0000,0x0000000010cd0000)]
+  0x000000000fda2800 JavaThread "mes_web.RoleLG.data" daemon [_thread_blocked, id=3996, stack(0x000000000f4a0000,0x000000000f5a0000)]
+  0x000000000fc91800 JavaThread "net.sf.ehcache.CacheManager@465e0419" daemon [_thread_blocked, id=3700, stack(0x000000000dbb0000,0x000000000dcb0000)]
+  0x000000000fb1f000 JavaThread "Tomcat JDBC Pool Cleaner[74224160:1498501178260]" daemon [_thread_blocked, id=5892, stack(0x0000000010640000,0x0000000010740000)]
+  0x000000000d261800 JavaThread "FileSystemWatcher: files=#107 cl=sun.misc.Launcher$AppClassLoader@46c9220" daemon [_thread_blocked, id=1960, stack(0x000000000dcb0000,0x000000000ddb0000)]
+  0x000000000d11e800 JavaThread "Service Thread" daemon [_thread_blocked, id=2876, stack(0x000000000d990000,0x000000000da90000)]
+  0x000000000d11d800 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=6080, stack(0x000000000d7e0000,0x000000000d8e0000)]
+  0x000000000d11d000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=4212, stack(0x000000000d6d0000,0x000000000d7d0000)]
+  0x000000000d11c000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=4952, stack(0x000000000d5d0000,0x000000000d6d0000)]
+  0x000000000b0d7800 JavaThread "Attach Listener" daemon [_thread_blocked, id=2184, stack(0x000000000c890000,0x000000000c990000)]
+  0x000000000b0d2000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=3216, stack(0x000000000c760000,0x000000000c860000)]
+  0x000000000b076800 JavaThread "Finalizer" daemon [_thread_blocked, id=2904, stack(0x000000000c580000,0x000000000c680000)]
+  0x000000000b06f000 JavaThread "Reference Handler" daemon [_thread_blocked, id=4592, stack(0x000000000c340000,0x000000000c440000)]
+
+Other Threads:
+  0x000000000b069000 VMThread [stack: 0x000000000c190000,0x000000000c290000] [id=2368]
+  0x000000000d121000 WatcherThread [stack: 0x000000000daa0000,0x000000000dba0000] [id=5704]
+
+VM state:synchronizing (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000000001f5e5b0] Threads_lock - owner thread: 0x000000000b069000
+
+Heap
+ PSYoungGen      total 254464K, used 45315K [0x00000000f0000000, 0x0000000100000000, 0x0000000100000000)
+  eden space 247808K, 15% used [0x00000000f0000000,0x00000000f261fe98,0x00000000ff200000)
+  from space 6656K, 94% used [0x00000000ff200000,0x00000000ff820f68,0x00000000ff880000)
+  to   space 7680K, 0% used [0x00000000ff880000,0x00000000ff880000,0x0000000100000000)
+ ParOldGen       total 524288K, used 265716K [0x00000000d0000000, 0x00000000f0000000, 0x00000000f0000000)
+  object space 524288K, 50% used [0x00000000d0000000,0x00000000e037d040,0x00000000f0000000)
+ PSPermGen       total 116736K, used 116265K [0x00000000c0000000, 0x00000000c7200000, 0x00000000d0000000)
+  object space 116736K, 99% used [0x00000000c0000000,0x00000000c718a4d0,0x00000000c7200000)
+
+Card table byte_map: [0x00000000084e0000,0x00000000086f0000] byte_map_base: 0x0000000007ee0000
+
+Polling page: 0x0000000000230000
+
+Code Cache  [0x00000000024e0000, 0x0000000003cb0000, 0x00000000084e0000)
+ total_blobs=11584 nmethods=10844 adapters=670 free_code_cache=74002Kb largest_free_block=75733824
+
+Compilation events (10 events):
+Event: 467.926 Thread 0x000000000d11d800 11211       1       org.grails.web.mapping.DefaultUrlMappingsHolder$UrlMappingKey::equals (187 bytes)
+Event: 467.927 Thread 0x000000000d11d800 nmethod 11211 0x0000000003ca4f10 code [0x0000000003ca50e0, 0x0000000003ca5548]
+Event: 467.931 Thread 0x000000000d11d800 11212       1       org.hibernate.internal.CriteriaImpl::getProjection (5 bytes)
+Event: 467.931 Thread 0x000000000d11d800 nmethod 11212 0x0000000003ca58d0 code [0x0000000003ca5a20, 0x0000000003ca5b70]
+Event: 468.669 Thread 0x000000000d11d800 11213       1       org.hibernate.loader.OuterJoinLoader::getEntityPersisters (5 bytes)
+Event: 468.669 Thread 0x000000000d11d800 nmethod 11213 0x0000000003ca5bd0 code [0x0000000003ca5d20, 0x0000000003ca5e70]
+Event: 468.669 Thread 0x000000000d11d800 11214       1       org.hibernate.engine.spi.RowSelection::getMaxRows (5 bytes)
+Event: 468.669 Thread 0x000000000d11d800 nmethod 11214 0x0000000003ca5ed0 code [0x0000000003ca6020, 0x0000000003ca6170]
+Event: 468.807 Thread 0x000000000d11d800 11215       1       org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl::getTransactionCoordinator (5 bytes)
+Event: 468.808 Thread 0x000000000d11d800 nmethod 11215 0x0000000003ca61d0 code [0x0000000003ca6320, 0x0000000003ca6470]
+
+GC Heap History (10 events):
+Event: 449.616 GC heap before
+{Heap before GC invocations=65 (full 0):
+ PSYoungGen      total 254464K, used 248299K [0x00000000f0000000, 0x0000000100000000, 0x0000000100000000)
+  eden space 246272K, 100% used [0x00000000f0000000,0x00000000ff080000,0x00000000ff080000)
+  from space 8192K, 24% used [0x00000000ff800000,0x00000000ff9fae90,0x0000000100000000)
+  to   space 7680K, 0% used [0x00000000ff080000,0x00000000ff080000,0x00000000ff800000)
+ ParOldGen       total 524288K, used 256959K [0x00000000d0000000, 0x00000000f0000000, 0x00000000f0000000)
+  object space 524288K, 49% used [0x00000000d0000000,0x00000000dfaefdf8,0x00000000f0000000)
+ PSPermGen       total 104448K, used 104243K [0x00000000c0000000, 0x00000000c6600000, 0x00000000d0000000)
+  object space 104448K, 99% used [0x00000000c0000000,0x00000000c65ccec8,0x00000000c6600000)
+Event: 449.651 GC heap after
+Heap after GC invocations=65 (full 0):
+ PSYoungGen      total 253952K, used 2813K [0x00000000f0000000, 0x0000000100000000, 0x0000000100000000)
+  eden space 246272K, 0% used [0x00000000f0000000,0x00000000f0000000,0x00000000ff080000)
+  from space 7680K, 36% used [0x00000000ff080000,0x00000000ff33f798,0x00000000ff800000)
+  to   space 7168K, 0% used [0x00000000ff900000,0x00000000ff900000,0x0000000100000000)
+ ParOldGen       total 524288K, used 258746K [0x00000000d0000000, 0x00000000f0000000, 0x00000000f0000000)
+  object space 524288K, 49% used [0x00000000d0000000,0x00000000dfcae940,0x00000000f0000000)
+ PSPermGen       total 104448K, used 104243K [0x00000000c0000000, 0x00000000c6600000, 0x00000000d0000000)
+  object space 104448K, 99% used [0x00000000c0000000,0x00000000c65ccec8,0x00000000c6600000)
+}
+Event: 449.882 GC heap before
+{Heap before GC invocations=66 (full 0):
+ PSYoungGen      total 253952K, used 249085K [0x00000000f0000000, 0x0000000100000000, 0x0000000100000000)
+  eden space 246272K, 100% used [0x00000000f0000000,0x00000000ff080000,0x00000000ff080000)
+  from space 7680K, 36% used [0x00000000ff080000,0x00000000ff33f798,0x00000000ff800000)
+  to   space 7168K, 0% used [0x00000000ff900000,0x00000000ff900000,0x0000000100000000)
+ ParOldGen       total 524288K, used 258746K [0x00000000d0000000, 0x00000000f0000000, 0x00000000f0000000)
+  object space 524288K, 49% used [0x00000000d0000000,0x00000000dfcae940,0x00000000f0000000)
+ PSPermGen       total 104448K, used 104243K [0x00000000c0000000, 0x00000000c6600000, 0x00000000d0000000)
+  object space 104448K, 99% used [0x00000000c0000000,0x00000000c65ccec8,0x00000000c6600000)
+Event: 449.920 GC heap after
+Heap after GC invocations=66 (full 0):
+ PSYoungGen      total 254976K, used 96K [0x00000000f0000000, 0x0000000100000000, 0x0000000100000000)
+  eden space 247808K, 0% used [0x00000000f0000000,0x00000000f0000000,0x00000000ff200000)
+  from space 7168K, 1% used [0x00000000ff900000,0x00000000ff918000,0x0000000100000000)
+  to   space 7168K, 0% used [0x00000000ff200000,0x00000000ff200000,0x00000000ff900000)
+ ParOldGen       total 524288K, used 261482K [0x00000000d0000000, 0x00000000f0000000, 0x00000000f0000000)
+  object space 524288K, 49% used [0x00000000d0000000,0x00000000dff5a970,0x00000000f0000000)
+ PSPermGen       total 104448K, used 104243K [0x00000000c0000000, 0x00000000c6600000, 0x00000000d0000000)
+  object space 104448K, 99% used [0x00000000c0000000,0x00000000c65ccec8,0x00000000c6600000)
+}
+Event: 450.160 GC heap before
+{Heap before GC invocations=67 (full 0):
+ PSYoungGen      total 254976K, used 247904K [0x00000000f0000000, 0x0000000100000000, 0x0000000100000000)
+  eden space 247808K, 100% used [0x00000000f0000000,0x00000000ff200000,0x00000000ff200000)
+  from space 7168K, 1% used [0x00000000ff900000,0x00000000ff918000,0x0000000100000000)
+  to   space 7168K, 0% used [0x00000000ff200000,0x00000000ff200000,0x00000000ff900000)
+ ParOldGen       total 524288K, used 261482K [0x00000000d0000000, 0x00000000f0000000, 0x00000000f0000000)
+  object space 524288K, 49% used [0x00000000d0000000,0x00000000dff5a970,0x00000000f0000000)
+ PSPermGen       total 104960K, used 104481K [0x00000000c0000000, 0x00000000c6680000, 0x00000000d0000000)
+  object space 104960K, 99% used [0x00000000c0000000,0x00000000c6608548,0x00000000c6680000)
+Event: 450.164 GC heap after
+Heap after GC invocations=67 (full 0):
+ PSYoungGen      total 254976K, used 1148K [0x00000000f0000000, 0x0000000100000000, 0x0000000100000000)
+  eden space 247808K, 0% used [0x00000000f0000000,0x00000000f0000000,0x00000000ff200000)
+  from space 7168K, 16% used [0x00000000ff200000,0x00000000ff31f328,0x00000000ff900000)
+  to   space 6656K, 0% used [0x00000000ff980000,0x00000000ff980000,0x0000000100000000)
+ ParOldGen       total 524288K, used 261490K [0x00000000d0000000, 0x00000000f0000000, 0x00000000f0000000)
+  object space 524288K, 49% used [0x00000000d0000000,0x00000000dff5c970,0x00000000f0000000)
+ PSPermGen       total 104960K, used 104481K [0x00000000c0000000, 0x00000000c6680000, 0x00000000d0000000)
+  object space 104960K, 99% used [0x00000000c0000000,0x00000000c6608548,0x00000000c6680000)
+}
+Event: 451.201 GC heap before
+{Heap before GC invocations=68 (full 0):
+ PSYoungGen      total 254976K, used 248956K [0x00000000f0000000, 0x0000000100000000, 0x0000000100000000)
+  eden space 247808K, 100% used [0x00000000f0000000,0x00000000ff200000,0x00000000ff200000)
+  from space 7168K, 16% used [0x00000000ff200000,0x00000000ff31f328,0x00000000ff900000)
+  to   space 6656K, 0% used [0x00000000ff980000,0x00000000ff980000,0x0000000100000000)
+ ParOldGen       total 524288K, used 261490K [0x00000000d0000000, 0x00000000f0000000, 0x00000000f0000000)
+  object space 524288K, 49% used [0x00000000d0000000,0x00000000dff5c970,0x00000000f0000000)
+ PSPermGen       total 105472K, used 105329K [0x00000000c0000000, 0x00000000c6700000, 0x00000000d0000000)
+  object space 105472K, 99% used [0x00000000c0000000,0x00000000c66dc658,0x00000000c6700000)
+Event: 451.295 GC heap after
+Heap after GC invocations=68 (full 0):
+ PSYoungGen      total 254464K, used 3744K [0x00000000f0000000, 0x0000000100000000, 0x0000000100000000)
+  eden space 247808K, 0% used [0x00000000f0000000,0x00000000f0000000,0x00000000ff200000)
+  from space 6656K, 56% used [0x00000000ff980000,0x00000000ffd28260,0x0000000100000000)
+  to   space 7168K, 0% used [0x00000000ff200000,0x00000000ff200000,0x00000000ff900000)
+ ParOldGen       total 524288K, used 262490K [0x00000000d0000000, 0x00000000f0000000, 0x00000000f0000000)
+  object space 524288K, 50% used [0x00000000d0000000,0x00000000e0056bb8,0x00000000f0000000)
+ PSPermGen       total 105472K, used 105329K [0x00000000c0000000, 0x00000000c6700000, 0x00000000d0000000)
+  object space 105472K, 99% used [0x00000000c0000000,0x00000000c66dc658,0x00000000c6700000)
+}
+Event: 452.624 GC heap before
+{Heap before GC invocations=69 (full 0):
+ PSYoungGen      total 254464K, used 251552K [0x00000000f0000000, 0x0000000100000000, 0x0000000100000000)
+  eden space 247808K, 100% used [0x00000000f0000000,0x00000000ff200000,0x00000000ff200000)
+  from space 6656K, 56% used [0x00000000ff980000,0x00000000ffd28260,0x0000000100000000)
+  to   space 7168K, 0% used [0x00000000ff200000,0x00000000ff200000,0x00000000ff900000)
+ ParOldGen       total 524288K, used 262490K [0x00000000d0000000, 0x00000000f0000000, 0x00000000f0000000)
+  object space 524288K, 50% used [0x00000000d0000000,0x00000000e0056bb8,0x00000000f0000000)
+ PSPermGen       total 116736K, used 116252K [0x00000000c0000000, 0x00000000c7200000, 0x00000000d0000000)
+  object space 116736K, 99% used [0x00000000c0000000,0x00000000c7187190,0x00000000c7200000)
+Event: 452.697 GC heap after
+Heap after GC invocations=69 (full 0):
+ PSYoungGen      total 254464K, used 6275K [0x00000000f0000000, 0x0000000100000000, 0x0000000100000000)
+  eden space 247808K, 0% used [0x00000000f0000000,0x00000000f0000000,0x00000000ff200000)
+  from space 6656K, 94% used [0x00000000ff200000,0x00000000ff820f68,0x00000000ff880000)
+  to   space 7680K, 0% used [0x00000000ff880000,0x00000000ff880000,0x0000000100000000)
+ ParOldGen       total 524288K, used 265716K [0x00000000d0000000, 0x00000000f0000000, 0x00000000f0000000)
+  object space 524288K, 50% used [0x00000000d0000000,0x00000000e037d040,0x00000000f0000000)
+ PSPermGen       total 116736K, used 116252K [0x00000000c0000000, 0x00000000c7200000, 0x00000000d0000000)
+  object space 116736K, 99% used [0x00000000c0000000,0x00000000c7187190,0x00000000c7200000)
+}
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 467.916 Thread 0x00000000100bf000 Threw 0x00000000f1f3b070 at C:\re\jdk7u80\2329\hotspot\src\share\vm\prims\jvm.cpp:1319
+Event: 467.916 Thread 0x00000000100bf000 Threw 0x00000000f1f53ac0 at C:\re\jdk7u80\2329\hotspot\src\share\vm\prims\jvm.cpp:1319
+Event: 467.916 Thread 0x00000000100bf000 Threw 0x00000000f1f54e78 at C:\re\jdk7u80\2329\hotspot\src\share\vm\prims\jvm.cpp:1319
+Event: 467.916 Thread 0x00000000100bf000 Threw 0x00000000f1f6d8b8 at C:\re\jdk7u80\2329\hotspot\src\share\vm\prims\jvm.cpp:1319
+Event: 467.917 Thread 0x00000000100bf000 Threw 0x00000000f1f6fbb8 at C:\re\jdk7u80\2329\hotspot\src\share\vm\classfile\systemDictionary.cpp:185
+Event: 467.917 Thread 0x00000000100bf000 Threw 0x00000000f1f72298 at C:\re\jdk7u80\2329\hotspot\src\share\vm\runtime\sharedRuntime.cpp:591
+Event: 467.923 Thread 0x00000000100bf000 Threw 0x00000000f2109570 at C:\re\jdk7u80\2329\hotspot\src\share\vm\prims\jvm.cpp:1319
+Event: 467.924 Thread 0x00000000100bf000 Threw 0x00000000f2125d58 at C:\re\jdk7u80\2329\hotspot\src\share\vm\prims\jvm.cpp:1319
+Event: 468.809 Thread 0x00000000100bf000 Threw 0x00000000f228f4d8 at C:\re\jdk7u80\2329\hotspot\src\share\vm\prims\jvm.cpp:1319
+Event: 468.810 Thread 0x00000000100bf000 Threw 0x00000000f22a1398 at C:\re\jdk7u80\2329\hotspot\src\share\vm\prims\jvm.cpp:1319
+
+Events (10 events):
+Event: 467.916 loading class 0x000000000fe4e630
+Event: 467.916 loading class 0x000000000fe4e630 done
+Event: 467.916 loading class 0x000000000fe4e630
+Event: 467.916 loading class 0x000000000fe4e630 done
+Event: 467.917 loading class 0x000000000fe4e630
+Event: 467.917 loading class 0x000000000fe4e630 done
+Event: 467.923 loading class 0x000000000f8b0270
+Event: 467.923 loading class 0x000000000f8b0270 done
+Event: 468.809 loading class 0x000000000ed60f70
+Event: 468.809 loading class 0x000000000ed60f70 done
+
+
+Dynamic libraries:
+0x000000013fa90000 - 0x000000013fac3000 	C:\Program Files\Java\jdk1.7.0_80\bin\java.exe
+0x0000000076e10000 - 0x0000000076fb9000 	C:\Windows\SYSTEM32\ntdll.dll
+0x000007fef17b0000 - 0x000007fef17e3000 	C:\Program Files\AVAST Software\Avast\x64\aswhooka.dll
+0x0000000076cf0000 - 0x0000000076e0f000 	C:\Windows\system32\kernel32.dll
+0x000007fefcd50000 - 0x000007fefcdbb000 	C:\Windows\system32\KERNELBASE.dll
+0x000007fefec00000 - 0x000007fefecdb000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefd060000 - 0x000007fefd0ff000 	C:\Windows\system32\msvcrt.dll
+0x000007fefd130000 - 0x000007fefd14f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefe920000 - 0x000007fefea4d000 	C:\Windows\system32\RPCRT4.dll
+0x0000000076bf0000 - 0x0000000076cea000 	C:\Windows\system32\USER32.dll
+0x000007fefe8b0000 - 0x000007fefe917000 	C:\Windows\system32\GDI32.dll
+0x000007fefece0000 - 0x000007fefecee000 	C:\Windows\system32\LPK.dll
+0x000007feff050000 - 0x000007feff119000 	C:\Windows\system32\USP10.dll
+0x000007fefb5f0000 - 0x000007fefb7e4000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_fa396087175ac9ac\COMCTL32.dll
+0x000007fefcf90000 - 0x000007fefd001000 	C:\Windows\system32\SHLWAPI.dll
+0x000007fefd100000 - 0x000007fefd12e000 	C:\Windows\system32\IMM32.DLL
+0x000007fefe1b0000 - 0x000007fefe2b9000 	C:\Windows\system32\MSCTF.dll
+0x0000000058ca0000 - 0x0000000058d72000 	C:\Program Files\Java\jdk1.7.0_80\jre\bin\msvcr100.dll
+0x0000000057300000 - 0x0000000057ad9000 	C:\Program Files\Java\jdk1.7.0_80\jre\bin\server\jvm.dll
+0x000007fef2370000 - 0x000007fef2379000 	C:\Windows\system32\WSOCK32.dll
+0x000007fefd010000 - 0x000007fefd05d000 	C:\Windows\system32\WS2_32.dll
+0x000007fefcf80000 - 0x000007fefcf88000 	C:\Windows\system32\NSI.dll
+0x000007fef8790000 - 0x000007fef87cb000 	C:\Windows\system32\WINMM.dll
+0x0000000076fe0000 - 0x0000000076fe7000 	C:\Windows\system32\PSAPI.DLL
+0x000000006dde0000 - 0x000000006ddef000 	C:\Program Files\Java\jdk1.7.0_80\jre\bin\verify.dll
+0x00000000697b0000 - 0x00000000697d8000 	C:\Program Files\Java\jdk1.7.0_80\jre\bin\java.dll
+0x000000005a430000 - 0x000000005a453000 	C:\Program Files\Java\jdk1.7.0_80\jre\bin\instrument.dll
+0x0000000069680000 - 0x0000000069696000 	C:\Program Files\Java\jdk1.7.0_80\jre\bin\zip.dll
+0x0000000068ee0000 - 0x0000000068efa000 	C:\Program Files\Java\jdk1.7.0_80\jre\bin\net.dll
+0x000007fefc360000 - 0x000007fefc3b5000 	C:\Windows\system32\mswsock.dll
+0x000007fefc330000 - 0x000007fefc337000 	C:\Windows\System32\wship6.dll
+0x000007fefa5f0000 - 0x000007fefa605000 	C:\Windows\system32\NLAapi.dll
+0x000007fef2720000 - 0x000007fef2735000 	C:\Windows\system32\napinsp.dll
+0x000007fef2700000 - 0x000007fef2719000 	C:\Windows\system32\pnrpnsp.dll
+0x000007fefc1c0000 - 0x000007fefc21b000 	C:\Windows\system32\DNSAPI.dll
+0x000007fef26f0000 - 0x000007fef26fb000 	C:\Windows\System32\winrnr.dll
+0x000007fefbd80000 - 0x000007fefbd87000 	C:\Windows\System32\wshtcpip.dll
+0x000007fefa2c0000 - 0x000007fefa2e7000 	C:\Windows\system32\IPHLPAPI.DLL
+0x000007fefa2b0000 - 0x000007fefa2bb000 	C:\Windows\system32\WINNSI.DLL
+0x000007fefad70000 - 0x000007fefad78000 	C:\Windows\system32\rasadhlp.dll
+0x000007fefa140000 - 0x000007fefa193000 	C:\Windows\System32\fwpuclnt.dll
+0x000000005a4f0000 - 0x000000005a501000 	C:\Program Files\Java\jdk1.7.0_80\jre\bin\nio.dll
+0x000000005a4e0000 - 0x000000005a4eb000 	C:\Program Files\Java\jdk1.7.0_80\jre\bin\management.dll
+0x000007fefc3c0000 - 0x000007fefc3d7000 	C:\Windows\system32\CRYPTSP.dll
+0x000007fefc0a0000 - 0x000007fefc0e7000 	C:\Windows\system32\rsaenh.dll
+0x000007fefcf10000 - 0x000007fefcf2e000 	C:\Windows\system32\USERENV.dll
+0x000007fefcbc0000 - 0x000007fefcbcf000 	C:\Windows\system32\profapi.dll
+0x000007fefca60000 - 0x000007fefca6f000 	C:\Windows\system32\CRYPTBASE.dll
+0x000007fefa110000 - 0x000007fefa128000 	C:\Windows\system32\dhcpcsvc.DLL
+0x000007fefa0f0000 - 0x000007fefa101000 	C:\Windows\system32\dhcpcsvc6.DLL
+0x000007fef3ab0000 - 0x000007fef3bd5000 	C:\Windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dendpoints.shutdown.enabled=true -Denv=development -Dfull.stacktrace=false -Dgrails.env=development -Dgrails.full.stacktrace=false -Dinfo.app.grailsVersion=3.1.9 -Dinfo.app.name=mes_web_v1.38 -Dinfo.app.version=1.38 -Dinteractive.mode.enabled=true -Djdk.reflect.allowGetCallerClass=true -Drun.active=true -Dserver.port=8001 -Dspringloaded=inclusions=grails.plugins..*;synchronize=true;allowSplitPackages=true;cacheDir=C:\Users\HP\Documents\grails\mes_web_v1.38\build\springloaded -Dverbose=false -XX:PermSize=96m -XX:MaxPermSize=256m -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -XX:CICompilerCount=3 -Xverify:none -javaagent:C:\Users\HP\.gradle\caches\modules-2\files-2.1\org.springframework\springloaded\1.2.6.RELEASE\df364cd5f36ae9a01ac4e73ecd138daa735fbbc8\springloaded-1.2.6.RELEASE.jar -Xverify:none -Xms768m -Xmx768m -Dfile.encoding=windows-1252 -Duser.country=MX -Duser.language=es -Duser.variant 
+java_command: mes_web.Application
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.7.0_80
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\PostgreSQL\pg95\bin;C:\Program Files\Java\jdk1.7.0_80\bin;C:\grails\bin;C:\Program Files (x86)\GtkSharp\2.12\bin
+USERNAME=HP
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 4 (4 cores per cpu, 1 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, tsc, tscinvbit
+
+Memory: 4k page, physical 4079632k(442588k free), swap 9255508k(699140k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (24.80-b11) for windows-amd64 JRE (1.7.0_80-b15), built on Apr 10 2015 11:26:34 by "java_re" with unknown MS VC++:1600
+
+time: Mon Jun 26 13:27:17 2017
+elapsed time: 469 seconds
+

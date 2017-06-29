@@ -1,0 +1,150 @@
+---
+hibernate:
+    cache:
+        queries: false
+        use_second_level_cache: true
+        use_query_cache: false
+        region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
+    jdbc:
+        use_get_generated_keys: true
+    id:
+        new_generator_mappings: true
+
+dataSource:
+    pooled: true
+    jmxExport: true
+    driverClassName: org.postgresql.Driver
+    username: mes_user_db
+    password: K7#a.22081977
+    dialect: org.hibernate.dialect.PostgreSQL9Dialect
+
+environments:
+    development:
+        dataSource:
+            dbCreate: update // one of 'create', 'create-drop','update'
+            url: jdbc:postgresql://localhost:5432/mes_db
+
+            logSql: false // muestra en consola las sentencis SQL
+            formatSql: false // las sentencias SQL les da un formato
+    test:
+        dataSource:
+            dbCreate: update
+            url: jdbc:postgresql://localhost:5432/mes_db
+
+    production:
+        dataSource:
+            url: jdbc:postgresql://localhost:5432/mes_db
+
+            properties:
+                jmxEnabled: true
+                initialSize: 5
+                maxActive: 50
+                minIdle: 5
+                maxIdle: 25
+                maxWait: 10000
+                maxAge: 600000
+                timeBetweenEvictionRunsMillis: 5000
+                minEvictableIdleTimeMillis: 60000
+                validationQuery: SELECT 1
+                validationQueryTimeout: 3
+                validationInterval: 15000
+                testOnBorrow: true
+                testWhileIdle: true
+                testOnReturn: false
+                jdbcInterceptors: ConnectionState
+                defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+
+---
+---
+grails:
+    profile: web
+    codegen:
+        defaultPackage: mes_web
+    spring:
+        transactionManagement:
+            proxies: false
+info:
+    app:
+        name: 'MES'
+        version: '1.38'
+        grailsVersion: '@info.app.grailsVersion@'
+spring:
+    groovy:
+        template:
+            check-template-location: false
+# Spring Actuator Endpoints are Disabled by Default
+endpoints:
+    enabled: false
+    jmx:
+        enabled: true
+
+---
+grails:
+    databinding:
+        dateFormats:
+            - 'dd/MM/yyyy'
+            - 'dd/MM/yyyy HH:mm:ss'
+            - 'yyyy-MM-dd HH:mm:ss.S'
+            - "yyyy-MM-dd'T'hh:mm:ss'Z'"
+            - "yyyy-MM-dd HH:mm:ss.S z"
+            - "yyyy-MM-dd'T'HH:mm:ssX"
+    mime:
+        disable:
+            accept:
+                header:
+                    userAgents:
+                        - Gecko
+                        - WebKit
+                        - Presto
+                        - Trident
+        types:
+            all: '*/*'
+            atom: application/atom+xml
+            css: text/css
+            csv: text/csv
+            form: application/x-www-form-urlencoded
+            html:
+              - text/html
+              - application/xhtml+xml
+            js: text/javascript
+            json:
+              - application/json
+              - text/json
+            multipartForm: multipart/form-data
+            pdf: application/pdf
+            rss: application/rss+xml
+            text: text/plain
+            hal:
+              - application/hal+json
+              - application/hal+xml
+            xml:
+              - text/xml
+              - application/xml
+    urlmapping:
+        cache:
+            maxsize: 1000
+    controllers:
+        defaultScope: singleton
+        upload:
+            maxFileSize: 995242880
+            maxRequestSize: 995242880
+    converters:
+        encoding: UTF-8
+    views:
+        default:
+            codec: html
+        gsp:
+            encoding: UTF-8
+            htmlcodec: xml
+            codecs:
+                expression: html
+                scriptlets: html
+                taglib: none
+                staticparts: none
+endpoints:
+    jmx:
+        unique-names: true
+
+server:
+    port: 8001
+    sessionTimeout: 900

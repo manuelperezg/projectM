@@ -1,0 +1,39 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS file within this directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+* 
+*= encoding UTF-8
+*= require bootstrap
+*= require grails
+*= require main
+*= require datepicker
+*= require jquery.scrollbar
+*= require sweetalert2.min
+*= require select2.min
+*= require jquery-ui
+*= require font-awesome
+*= require style
+*= require jquery.fancybox
+*= require mobile
+*= require jslider
+*= require morris
+*= require revslider/settings
+*= require animate
+*= require video-js.min
+*= require multi-select
+* 
+*= require royalslider/royalslider
+*= require royalslider/skins/minimal-white/rs-minimal-white
+*= require layerslider/css/layerslider
+*= require ladda.min
+*
+*= require customizer/pages
+*= require customizer/home-pages-customizer
+*= require ie/ie
+*= require_self
+*/
