@@ -2,7 +2,7 @@ package mes_web
 
 import grails.rest.*
 
-@Resource(formats=['json', 'xml'])
+@Resource(uri='/WS_Linea',formats=['json', 'xml'])
 class WS_Linea{
 
 	String	id

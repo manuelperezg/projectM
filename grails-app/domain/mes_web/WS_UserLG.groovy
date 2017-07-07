@@ -4,7 +4,9 @@ import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 import grails.rest.*
 
-@Resource(formats=['json', 'xml'])
+
+@Resource(uri='/WS_UserLG', formats=['json', 'xml'])
+
 @EqualsAndHashCode(includes='username')
 @ToString(includes='username', includeNames=true, includePackage=false)
 class WS_UserLG implements Serializable {
