@@ -8,7 +8,7 @@
         <style>
             #materiales, #conjunto, #nombre, #verificacion, #actividad, #descripcion, #indicacion_materiales {width:50%}
             #dispositivos {width:30%}
-            #estado, #frecuencia, #responsable, #turno, #dia_semana, #mes, #subsistema {width:20%}
+            #estado, #frecuencia, #responsable, #dia_semana, #mes, #subsistema {width:20%}
             #tiempo, #horario {width:10%}
             .hidden {
 				display: none;
@@ -50,8 +50,6 @@
 				if (opcion == "") opcion = $("#frecuencia").val();
 				opcion = opcion.replace('Una vez por ','');
 				if (opcion == 'turno'){
-					$("#turno").parent().show();
-					$("label[for='turno']").removeClass("hidden");
 					$("#dia_semana").parent().hide();
 					$("label[for='dia_semana']").addClass("hidden");
 					$("#horario").addClass("hidden");
@@ -59,8 +57,6 @@
 					$("#mes").parent().hide();
 					$("label[for='mes']").addClass("hidden");
 				} else if (opcion == 'día'){
-					$("#turno").parent().hide();
-					$("label[for='turno']").addClass("hidden");
 					$("#dia_semana").parent().hide();
 					$("label[for='dia_semana']").addClass("hidden");
 					$("#horario").removeClass("hidden");
@@ -68,8 +64,6 @@
 					$("#mes").parent().hide();
 					$("label[for='mes']").addClass("hidden");
 				} else if (opcion == 'semana'){
-					$("#turno").parent().hide();
-					$("label[for='turno']").addClass("hidden");
 					$("#dia_semana").parent().show();
 					$("label[for='dia_semana']").removeClass("hidden");
 					$("#horario").addClass("hidden");
@@ -77,8 +71,6 @@
 					$("#mes").parent().hide();
 					$("label[for='mes']").addClass("hidden");
 				} else if (opcion == 'mes'){
-					$("#turno").parent().hide();
-					$("label[for='turno']").addClass("hidden");
 					$("#dia_semana").parent().hide();
 					$("label[for='dia_semana']").addClass("hidden");
 					$("#horario").addClass("hidden");
@@ -86,8 +78,6 @@
 					$("#mes").parent().hide();
 					$("label[for='mes']").addClass("hidden");
 				} else {
-					$("#turno").parent().hide();
-					$("label[for='turno']").addClass("hidden");
 					$("#dia_semana").parent().hide();
 					$("label[for='dia_semana']").addClass("hidden");
 					$("#horario").addClass("hidden");
@@ -191,7 +181,6 @@
 
 						<f:field property="frecuencia"/>
 
-						<f:field property="turno"/>
 						<f:field property="dia_semana"/>
 						<f:field property="horario"/>
 						<f:field property="mes"/>

@@ -1,23 +1,50 @@
+<style>
+.header .header-wrapper .cart-header .dropdown-toggle,
+.header .header-wrapper .cart-header.open .dropdown-toggle,
+.header .header-wrapper .cart-header.open .dropdown-toggle:after {
+	background: none;
+	border: none;
+	box-shadow: none;
+	-webkit-transition: none;
+	transition: none;
+}
+.tab{
+	border:1px solid white !important;
+	background-color:white !important;
+	color:#b1b1b1 !important;
+}
+</style>
 <script>
 	$( document ).ready(function() {
 		$('#btn-log').click(function() {
 			$('#log_form').submit();
 		});
 		
+		$('#tab_users').on('click', function(event){
+			$('#tab_users').toggleClass("tab");
+		});
+		
+		$(document).click(function(e){
+			if(!$(e.target).is('#tab_users')) {
+				 $('#tab_users').removeClass("tab");
+			}
+		});
+		
+	/*
 		$('#dropdown-login').on('click', function(event){
 			// The event won't be propagated up to the document NODE and
 			// therefore delegated events won't be fired
 			event.stopPropagation();
-			event.preventDefault();
 		});
 
 		$( "#dropdown-login" ).mouseout(function() {
 			console.log( "Handler for .mouseout() called." );
 		});
-		
+	*/
+
 		$("#activo_rol").select2();
-		
 	});
+		
 </script>
 
 <header class="header header-two">
@@ -36,7 +63,8 @@
 		  <div class="right-box-wrapper">
 			<div class="header-icons">
 			  <div class="btn-group cart-header">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-delay="2000" data-close-others="false">
+			  <div class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="tab_users">
 					<li class="fa fa-users"></li>
 				</a>
 				<div class="dropdown-menu" id="dropdown-login">
@@ -44,27 +72,20 @@
 					<div class="label_title" style="font-size:20px;width:100%">
 						<li class="fa fa-arrow-right"></li>&nbsp;Bienvenid@
 					</div>
-					<strong> ${session.getAttribute("username_nombre")}</strong>
+					<span style="font-size:16px;font-weight:bold;">${session.getAttribute("username_nombre")}</span>
 					<ul class="list-unstyled">
 						<li>
 							<g:link class="product-image" controller="userLG" action="myuser">
 								<g:if test="${session.getAttribute("username_archivo_Foto")}">
-									<img class="replace-2x" src="${request.contextPath}/assets/mes-users/${session.getAttribute("username_archivo_Foto")}" width="70" height="70" alt="">
+									<img class="replace-2x" src="${request.contextPath}/assets/mes-users/${session.getAttribute("username_archivo_Foto")}" style="width:100px;height:90px;top:-22px;position:relative;" alt="">
 								</g:if>
 								<g:else>
-									<img class="replace-2x" src="${request.contextPath}/assets/mes-users/default.png" width="70" height="70" alt="">
+									<img class="replace-2x" src="${request.contextPath}/assets/mes-users/default.png" style="width:100px;height:90px;top:-22px;position:relative;" alt="">
 								</g:else>
 							</g:link>
-							<h4 class="product-name">${message(code: 'default.login.activerole.label', default: 'Active role:')}</h4>
+							<h4 class="product-name" style="font-size:14px;">${message(code: 'default.login.activerole.label', default: 'Active role:')}</h4>
 							<div class="product-price">
-								<b>${session.getAttribute("username_rolActivo")}</b>
-								<!--
-								<select name="activo_rol" id="activo_rol" style="width:100%">
-									<option>Programador</option>
-									<option selected="selected">Administrador</option>
-									<option>Titular de la UV</option>
-								</select>
-								-->
+								<span style="font-size:14px;font-weight:bold;color:#0C5FAE;">${session.getAttribute("username_rolActivo")}</span>
 							</div>
 						</li>
 					</ul>
@@ -125,6 +146,7 @@
 						</fieldset>
 					</g:form>
 </sec:ifNotLoggedIn>
+				</div>
 				</div>
 			  </div>
 
@@ -193,7 +215,7 @@
 								-->
 							  </ul>
 							</div><!-- .box -->
-							
+
 							<div class="box closed">
 							  <h6 class="title">Catálogos</h6>
 							  <ul>
@@ -202,13 +224,13 @@
 							  	<li><a href="${request.contextPath}/tipoVerificacion/index"><i class="fa fa-plus-square"></i>&nbsp;Tipos de verificación</a></li>
 							  </ul>
 							</div><!-- .box -->
-							
+
 							<div class="box closed">
 							  <h6 class="title">Estructura</h6>
 							  <ul>
 								<li><a href="${request.contextPath}/planta/index"><i class="fa fa-plus-square"></i>&nbsp;Plantas</a></li>
 
-								
+
 
 
 
@@ -220,7 +242,7 @@
 							  	<li><a href="${request.contextPath}/material/index"><i class="fa fa-plus-square"></i>&nbsp;Materiales</a></li>
 							  </ul>
 							</div><!-- .box -->
-							
+
 							<div class="box closed">
 							  <h6 class="title">Verificaciones</h6>
 							  <ul>

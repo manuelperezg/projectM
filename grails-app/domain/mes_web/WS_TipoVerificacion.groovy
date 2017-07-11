@@ -2,7 +2,7 @@ package mes_web
 
 import grails.rest.*
 
-@Resource(uri='/WS_TipoVerificacion',formats=['json', 'xml'])
+@Resource(uri='/WS_TipoVerificacion', formats=['json', 'xml'])
 class WS_TipoVerificacion {
 
     String  id

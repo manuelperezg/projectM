@@ -1,6 +1,6 @@
 environments {
     development {
-        uploadFolder = "C:/Users/HP/Documents/grails/mes_web_v1.38/grails-app/assets/images/"
+        uploadFolder = "C:/Users/1200/Documents/Grails/mes_web_v1.39/grails-app/assets/images/"
     }
     test {
         uploadFolder = "c:/temp/upload/"
@@ -60,7 +60,6 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/qrcode/*',       access: ['ROLE_ADMINISTRADOR']],
 	
 	//Api rest vistas
-
 	[pattern: '/WS_Categoria/*',     access: ['permitAll']],
 	[pattern: '/WS_Estandar/*',      access: ['permitAll']],
 	[pattern: '/WS_Linea/*',         access: ['permitAll']],
@@ -69,14 +68,14 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/WS_Pieza/*',         access: ['permitAll']],
 	[pattern: '/WS_Planta/*',        access: ['permitAll']],
 	[pattern: '/WS_Punto/*',         access: ['permitAll']],
+	[pattern: '/WS_PuntoRespuesta/*',     access: ['permitAll']],
 	[pattern: '/WS_Subsistema/*',    access: ['permitAll']],
 	[pattern: '/WS_TipoMantenimiento/*',  access: ['permitAll']],
 	[pattern: '/WS_TipoVerificacion/*',   access: ['permitAll']],
 	[pattern: '/WS_Verificacion/*',   access: ['permitAll']],
 	[pattern: '/WS_UserLG/*',   access: ['permitAll']],
 	[pattern: '/WS_RoleLG/*',   access: ['permitAll']],
-	//pruebas urls vistas
-	[pattern: '/Planta_rest/*',   access: ['permitAll']],
+	[pattern: '/WS_UserLGRoleLG/*',   access: ['permitAll']],
 
 	[pattern: '/**/js/**',       access: ['permitAll']],
 	[pattern: '/**/css/**',      access: ['permitAll']],

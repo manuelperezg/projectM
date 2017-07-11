@@ -175,10 +175,9 @@
 										<g:link method="GET" resource="${item}">${item.nombre}</g:link>
 										</td>
 										<td>${item.frecuencia.replaceAll("Una vez por", "X").trim()}</br>
-										<g:if test="${item.frecuencia == 'Una vez por turno'}">${item.turno}</g:if>
 										<g:if test="${item.frecuencia == 'Una vez por día'}">${item.horario}</g:if>
 										<g:if test="${item.frecuencia == 'Una vez por semana'}">${item.dia_semana}</g:if>
-										<g:if test="${item.frecuencia == 'Una vez por trimestre'||item.frecuencia == 'Una vez por año'}">${item.mes}</g:if>
+										<g:if test="${item.frecuencia == 'Una vez por bimestre'||item.frecuencia == 'Una vez por trimestre'||item.frecuencia == 'Una vez por año'}">${item.mes}</g:if>
 										</td>
 										<td>
 										<g:if test="${item.frecuencia == 'Una vez por turno'}">
@@ -194,6 +193,9 @@
 											<g:each in="${1..12}" var="c" ><div class="calendar_item programed" style="<g:if test='${c == new Date().toCalendar().get(Calendar.MONTH)+1}'>color:#DA291C;font-weight:bold;</g:if>">M${c}</div></g:each>
 										</g:if>
 										<g:set var="mes_numero" value="${item.mes == 'Enero'?1:item.mes == 'Febrero'?2:item.mes == 'Marzo'?3:item.mes == 'Abril'?4:item.mes == 'Mayo'?5:item.mes == 'Junio'?6:item.mes == 'Julio'?7:item.mes == 'Agosto'?8:item.mes == 'Septiembre'?9:item.mes == 'Octubre'?10:item.mes == 'Noviembre'?11:item.mes == 'Diciembre'?12:0}" />
+										<g:if test="${item.frecuencia == 'Una vez por bimestre'}">
+											<g:each in="${1..12}" var="c" ><div class="calendar_item ${(c == mes_numero || c == mes_numero+2 || c == mes_numero+4 || c == mes_numero+6 || c == mes_numero+8 || c == mes_numero+10 ?'programed':'empty')}" style="<g:if test='${c == (new Date().toCalendar().get(Calendar.MONTH)+1)}'>color:#DA291C;font-weight:bold;</g:if>">M${c}</div></g:each>
+										</g:if>
 										<g:if test="${item.frecuencia == 'Una vez por trimestre'}">
 											<g:each in="${1..12}" var="c" ><div class="calendar_item ${(c == mes_numero || c == mes_numero+3 || c == mes_numero+6 || c == mes_numero+9?'programed':'empty')}" style="<g:if test='${c == (new Date().toCalendar().get(Calendar.MONTH)+1)}'>color:#DA291C;font-weight:bold;</g:if>">M${c}</div></g:each>
 										</g:if>

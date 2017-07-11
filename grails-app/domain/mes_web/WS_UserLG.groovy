@@ -1,18 +1,14 @@
 package mes_web
 
+import grails.rest.*
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
-import grails.rest.*
-
-
-@Resource(uri='/WS_UserLG', formats=['json', 'xml'])
 
 @EqualsAndHashCode(includes='username')
 @ToString(includes='username', includeNames=true, includePackage=false)
+@Resource(uri='/WS_UserLG', formats=['json', 'xml'])
 class WS_UserLG implements Serializable {
 	private static final long serialVersionUID = 1
-	
-	//static hasOne = RoleLG
 	
 	transient springSecurityService
 	
@@ -77,7 +73,6 @@ class WS_UserLG implements Serializable {
 	static transients = ['springSecurityService']
 
 	static constraints = {
-		//urs display: false
 		username		(blank: false, unique: true)
 		password		(blank: false)
 		password_Plain	(display:false, widget:'hiddenField')
@@ -92,8 +87,8 @@ class WS_UserLG implements Serializable {
 
 	static mapping = {
 		sort nombre: "asc"
+		table 'USERLG'
 		version false
-		//urs cascade: 'all-delete-orphan'
 		password column: '`password`'
 		
 		id_Autor column:'id_autor'

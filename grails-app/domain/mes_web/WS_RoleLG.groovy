@@ -1,12 +1,12 @@
 package mes_web
 
+import grails.rest.*
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
-import grails.rest.*
 
-@Resource(formats=['json', 'xml'])
 @EqualsAndHashCode(includes='authority')
 @ToString(includes='authority', includeNames=true, includePackage=false)
+@Resource(uri='/WS_RoleLG', formats=['json', 'xml'])
 class WS_RoleLG implements Serializable {
 
 	private static final long serialVersionUID = 1
@@ -16,8 +16,6 @@ class WS_RoleLG implements Serializable {
 	Date	dateCreated
     Date	lastUpdated
     UserLG	id_Autor
-
-    static hasMany = [lineas: Linea]
 
 	WS_RoleLG(String nombre, String authority) {
 		this()
@@ -31,10 +29,11 @@ class WS_RoleLG implements Serializable {
 		dateCreated		(widget:'display')
         lastUpdated		(widget:'display')
         id_Autor		(nullable:true, widget:'display')
-        lineas			(nullable:true, display: false, widget:'hiddenField')
 	}
 
 	static mapping = {
+		sort nombre: "asc"
+		table 'ROLELG'
 		cache true
 		id_Autor column:'id_autor'
 	}

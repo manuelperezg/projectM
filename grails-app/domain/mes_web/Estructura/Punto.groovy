@@ -41,7 +41,7 @@ class Punto {
         foto_malo       (nullable: true, widget:'icon')
         actividad       (nullable: false, widget: 'textarea')
         responsable     (nullable: false, inList: ["Operador", "Supervisor"])
-        frecuencia      (nullable: false, inList: ["Una vez por turno", "Una vez por d\u00eda", "Una vez por semana", "Una vez por mes", "Una vez por trimestre", "Una vez por año"])
+        frecuencia      (nullable: false, inList: ["Una vez por turno", "Una vez por d\u00eda", "Una vez por semana", "Una vez por mes", "Una vez por bimestre", "Una vez por trimestre", "Una vez por a\u00f1o"])
         turno		    (nullable: true, inList: ["Matutino", "Vespertino", "Nocturno"])
         dia_semana		(nullable: true, inList: ["Lunes", "Martes", "Mi\u00e9rcoles", "Jueves", "Viernes", "S\u00e1bado", "Domingo"])
         horario			(nullable: true)

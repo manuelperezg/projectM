@@ -14,7 +14,7 @@ buildscript {
     }
 }
 
-version "1.38"
+version "1.39"
 group "mes_web"
 
 apply plugin:"eclipse"
@@ -75,8 +75,6 @@ dependencies {
 
     compile "org.grails.plugins:spring-security-core:3.0.3"
     compile "org.grails.plugins:cookie-session:3.0.1"
-    //seguridad en rest api con toquen
-     compile "org.grails.plugins:spring-security-rest:2.0.0.M2"
 
     compile 'org.grails.plugins:qrcode:0.9'
 }

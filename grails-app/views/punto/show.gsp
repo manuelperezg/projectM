@@ -122,13 +122,6 @@
                         <div class="property-value" aria-labelledby="frecuencia-label"><f:display property="frecuencia"/></div>
                     </li>
 
-                    <g:if test="${punto.frecuencia == 'Una vez por turno'}">
-                    <li class="fieldcontain">
-                        <span id="turno-label" class="property-label"><g:message code="punto.turno.label" default="Turno" /></span>
-                        <div class="property-value" aria-labelledby="turno-label"><f:display property="turno"/></div>
-                    </li>
-                    </g:if>
-
                     <g:if test="${punto.frecuencia == 'Una vez por semana'}">
                     <li class="fieldcontain">
                         <span id="dia_semana-label" class="property-label"><g:message code="punto.dia_semana.label" default="Día de la semana" /></span>
